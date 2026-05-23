@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🌡️ Temperature Converter</h1>
+            <p>Convert between Celsius, Fahrenheit, and Kelvin</p>
+        </div>
+
+        <!-- Main Converter Section -->
+        <div class="converter-section">
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-group">
+                    <label for="temperature">Enter Temperature:</label>
+                    <input 
+                        type="number" 
+                        id="temperature" 
+                        placeholder="Enter temperature value"
+                        step="0.1"
+                        required
+                    >
+                    <span class="error-message" id="errorMessage"></span>
+                </div>
+
+                <!-- Unit Selection -->
+                <div class="unit-selection">
+                    <label>Select Input Unit:</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input 
+                                type="radio" 
+                                id="celsius" 
+                                name="inputUnit" 
+                                value="celsius"
+                                checked
+                            >
+                            <label for="celsius">Celsius (°C)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input 
+                                type="radio" 
+                                id="fahrenheit" 
+                                name="inputUnit" 
+                                value="fahrenheit"
+                            >
+                            <label for="fahrenheit">Fahrenheit (°F)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input 
+                                type="radio" 
+                                id="kelvin" 
+                                name="inputUnit" 
+                                value="kelvin"
+                            >
+                            <label for="kelvin">Kelvin (K)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Convert Button -->
+                <button class="convert-btn" onclick="convertTemperature()">Convert</button>
+            </div>
+
+            <!-- Results Area -->
+            <div class="results-area">
+                <h2>Conversion Results:</h2>
+                
+                <div class="result-card" id="celsiusResult">
+                    <div class="result-icon">°C</div>
+                    <div class="result-content">
+                        <p class="result-label">Celsius</p>
+                        <p class="result-value" id="celsiusValue">--</p>
+                    </div>
+                </div>
+
+                <div class="result-card" id="fahrenheitResult">
+                    <div class="result-icon">°F</div>
+                    <div class="result-content">
+                        <p class="result-label">Fahrenheit</p>
+                        <p class="result-value" id="fahrenheitValue">--</p>
+                    </div>
+                </div>
+
+                <div class="result-card" id="kelvinResult">
+                    <div class="result-icon">K</div>
+                    <div class="result-content">
+                        <p class="result-label">Kelvin</p>
+                        <p class="result-value" id="kelvinValue">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <h3>📚 Conversion Formulas:</h3>
+            <div class="formula-grid">
+                <div class="formula-card">
+                    <h4>Celsius to Fahrenheit</h4>
+                    <p>°F = (°C × 9/5) + 32</p>
+                </div>
+                <div class="formula-card">
+                    <h4>Celsius to Kelvin</h4>
+                    <p>K = °C + 273.15</p>
+                </div>
+                <div class="formula-card">
+                    <h4>Fahrenheit to Celsius</h4>
+                    <p>°C = (°F - 32) × 5/9</p>
+                </div>
+                <div class="formula-card">
+                    <h4>Fahrenheit to Kelvin</h4>
+                    <p>K = (°F - 32) × 5/9 + 273.15</p>
+                </div>
+                <div class="formula-card">
+                    <h4>Kelvin to Celsius</h4>
+                    <p>°C = K - 273.15</p>
+                </div>
+                <div class="formula-card">
+                    <h4>Kelvin to Fahrenheit</h4>
+                    <p>°F = (K - 273.15) × 9/5 + 32</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="quick-reference">
+            <h3>🌡️ Quick Reference Points:</h3>
+            <div class="reference-grid">
+                <div class="reference-item">
+                    <p><strong>Water Freezes:</strong></p>
+                    <p>0°C = 32°F = 273.15K</p>
+                </div>
+                <div class="reference-item">
+                    <p><strong>Room Temperature:</strong></p>
+                    <p>20°C = 68°F = 293.15K</p>
+                </div>
+                <div class="reference-item">
+                    <p><strong>Body Temperature:</strong></p>
+                    <p>37°C = 98.6°F = 310.15K</p>
+                </div>
+                <div class="reference-item">
+                    <p><strong>Water Boils:</strong></p>
+                    <p>100°C = 212°F = 373.15K</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reset Button -->
+        <button class="reset-btn" onclick="resetConverter()">Reset All</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
